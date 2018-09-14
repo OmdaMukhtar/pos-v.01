@@ -12,12 +12,28 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- Bootstrap  -->
+    <link href="{{ asset('sb-admin/css/bootstrap.min.css') }}" rel="stylesheet">
+
     <!-- Fonts -->
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        body {
+            font-family: Amiri;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
+
 </head>
 <body>
     <div id="app">
@@ -74,5 +90,13 @@
             @yield('content')
         </main>
     </div>
+
+    
+<!-- jQuery Version 1.11.0 -->
+<script src="{{ asset('sb-admin/js/jquery-1.11.0.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ asset('sb-admin/js/bootstrap.min.js') }}"></script>
+
 </body>
 </html>
