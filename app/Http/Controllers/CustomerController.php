@@ -14,9 +14,17 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        return view('customers.index')->with([
+            'customers' => Customer::all()
+        ]);
     }
 
+    public function confirm(Customer $customer)
+    {
+        return view('customer.confirm')->with([
+            'customer' => $customer
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
