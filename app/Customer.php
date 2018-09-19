@@ -10,7 +10,7 @@ class Customer extends Model
     
     use HasTranslations;
     
-    public $translatable = ['name'];
+    public $translatable = ['name','city','address', 'country'];
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +19,7 @@ class Customer extends Model
      */
     
      protected $fillable = [
-        'name', 'city','address', 'country','code'
+        'id','name', 'city','address', 'country','code','fax','facebook','email','debit','credit','balance','status'
     ];
     
 }

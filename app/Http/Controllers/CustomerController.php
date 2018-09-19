@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Customer;
 
 class CustomerController extends Controller
 {
@@ -21,7 +22,7 @@ class CustomerController extends Controller
 
     public function confirm(Customer $customer)
     {
-        return view('customer.confirm')->with([
+        return view('customers.confirm')->with([
             'customer' => $customer
         ]);
     }
@@ -32,7 +33,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('customers.create');
     }
 
     /**
@@ -43,7 +44,29 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $this->validate($request,[
+        //     'name'=>'require'
+        // ]);
+
+        $customer = new Customer();
+        $customer->name = $request->name;
+        $customer->address = $request->address;
+        $customer->customer_code = $request->code;
+        $customer->country = $request->country;
+        $customer->city = $request->city;
+        $customer->fax = $request->fax;
+        $customer->facebook = $request->facebook;
+        $customer->email = $request->email;
+        $customer->phone = $request->phone;
+        $customer->note = $request->note;
+        $customer->debit = $request->debit;
+        $customer->credit = $request->credit;
+        $customer->balance = $request->balance;
+        $customer->status = $request->status;
+        $customer->save();
+
+        return $customer;
+
     }
 
     /**
@@ -65,7 +88,9 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view('customers.edit')->with([
+            'customer'=> $customer
+        ]);
     }
 
     /**

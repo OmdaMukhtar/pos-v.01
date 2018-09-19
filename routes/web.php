@@ -21,5 +21,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/dashboard','DashboarController');
 
-Route::resource('/customer','CustomerController');
-Route::post('/customer/{customer}/confirm','CustomerController@confirm')->name('customer.confirm');
+Route::resource('/customers','CustomerController');
+Route::post('/customers/{customer}/confirm','CustomerController@confirm')->name('customer.confirm');
