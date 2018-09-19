@@ -7,24 +7,16 @@
         <h4 class="modal-title">@lang('customers.create_field')</h4>
     </div>
     <div class="modal-body">
-        <form action="{{ route('customers.store') }}" method="post">
+        <form action="{{ route('customers.update',$customer) }}" method="post">
             {{ csrf_field() }}
-
-            <div class="col-lg-12" style="margin-top: 20px!important;" >
-                <div class="col-lg-3 col-md-3 snsolabel">
-                    @lang('customers.code')
-                </div>
-                <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="code" readonly class="form-control" value="{{$code}}">
-                </div>
-            </div>
+            {{ method_field('put')}}
 
             <div class="col-lg-12" style="margin-top: 50px!important;" >
                 <div class="col-lg-3 col-md-3 snsolabel">
                     @lang('customers.name')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" value="{{ $customer->name }}" name="name" class="form-control">
                 </div>
             </div>
 
@@ -33,7 +25,7 @@
                     @lang('customers.address')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="address" class="form-control">
+                    <input type="text" value="{{ $customer->address }}" name="address" class="form-control">
                 </div>
             </div>
 
@@ -42,7 +34,7 @@
                     @lang('customers.country')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="country" class="form-control">
+                    <input type="text" value="{{ $customer->country }}" name="country" class="form-control">
                 </div>
             </div>
             
@@ -51,7 +43,7 @@
                     @lang('customers.city')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="city" class="form-control">
+                    <input type="text" value="{{ $customer->city }}" name="city" class="form-control">
                 </div>
             </div>
             
@@ -60,7 +52,7 @@
                     @lang('customers.fax')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="fax" class="form-control">
+                    <input type="text" value="{{ $customer->fax }}" name="fax" class="form-control">
                 </div>
             </div>
             
@@ -69,7 +61,7 @@
                     @lang('customers.phone')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="phone" class="form-control">
+                    <input type="text" value="{{ $customer->phone }}" name="phone" class="form-control">
                 </div>
             </div>
 
@@ -78,7 +70,7 @@
                     @lang('customers.email')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="email" class="form-control">
+                    <input type="text" value="{{ $customer->email }}" name="email" class="form-control">
                 </div>
             </div>
 
@@ -87,7 +79,7 @@
                     @lang('customers.facebook')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="facebook" class="form-control">
+                    <input type="text" value="{{ $customer->facebook }}" name="facebook" class="form-control">
                 </div>
             </div>
 
@@ -96,7 +88,7 @@
                     @lang('customers.note')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <textarea class="form-control" name="note"></textarea>
+                    <textarea class="form-control" value="{{ $customer->note }}" name="note"></textarea>
                 </div>
             </div>
 
@@ -105,7 +97,7 @@
                     @lang('customers.debit')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="number" name="debit" class="form-control">
+                    <input type="number" value="{{ $customer->debit }}" name="debit" class="form-control">
                 </div>
             </div>
 
@@ -114,7 +106,7 @@
                     @lang('customers.credit')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="number" name="credit" class="form-control">
+                    <input type="number" value="{{ $customer->credit }}" name="credit" class="form-control">
                 </div>
             </div>
 
@@ -123,7 +115,7 @@
                     @lang('customers.balance')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="number" name="balance" class="form-control">
+                    <input type="number" value="{{ $customer->balance }}" name="balance" class="form-control">
                 </div>
             </div>
 
@@ -132,7 +124,7 @@
                     @lang('customers.status')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="number" name="status" class="form-control">
+                    <input type="number" value="{{ $customer->status }}" name="status" class="form-control">
                 </div>
             </div>
             <div class="col-lg-12" style="margin-top: 20px !important;">

@@ -33,7 +33,19 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('customers.create');
+        $last = Customer::orderBy('id','DESC')->first();
+        $value = ($last->id) + 1;
+        // $value = ($id+1);
+
+        $code =  "CU" . $formatted_value = sprintf("%08d", $value);
+
+        $found = Customer::orderBy('created_at','desc')->where('customer_code',$code)->get();
+        if( count($found) > 0)
+        {
+            return $this->create();
+        }    
+
+        return view('customers.create')->withCode($code);
     }
 
     /**
@@ -65,7 +77,7 @@ class CustomerController extends Controller
         $customer->status = $request->status;
         $customer->save();
 
-        return $customer;
+        return redirect()->back();
 
     }
 
@@ -113,6 +125,10 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        if($customer->forceDelete()){
+            $customer->delete();
+        }
+
+        return redirect()->back();
     }
 }
