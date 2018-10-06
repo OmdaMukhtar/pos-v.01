@@ -7,7 +7,7 @@
         <h4 class="modal-title">@lang('general.update_field')</h4>
     </div>
     <div class="modal-body">
-        <form action="{{ route('customers.update',$customer) }}" method="post">
+        <form action="{{ route('suppliers.update',$supplier) }}" method="post">
             {{ csrf_field() }}
             {{ method_field('put')}}
 
@@ -16,7 +16,7 @@
                     @lang('customers.name')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" value="{{ $customer->name }}" name="name" class="form-control">
+                    <input type="text" value="{{ $supplier->name }}" name="name" class="form-control">
                 </div>
             </div>
 
@@ -25,7 +25,7 @@
                     @lang('customers.code')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="code" readonly class="form-control" value="{{$customer->code}}">
+                    <input type="text" name="code" readonly class="form-control" value="{{$supplier->code}}">
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                     @lang('customers.address')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" value="{{ $customer->address }}" name="address" class="form-control">
+                    <input type="text" value="{{ $supplier->address }}" name="address" class="form-control">
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
                     @lang('customers.country')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" value="{{ $customer->country }}" name="country" class="form-control">
+                    <input type="text" value="{{ $supplier->country }}" name="country" class="form-control">
                 </div>
             </div>
             
@@ -52,7 +52,7 @@
                     @lang('customers.city')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" value="{{ $customer->city }}" name="city" class="form-control">
+                    <input type="text" value="{{ $supplier->city }}" name="city" class="form-control">
                 </div>
             </div>
             
@@ -61,7 +61,7 @@
                     @lang('customers.fax')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" value="{{ $customer->fax }}" name="fax" class="form-control">
+                    <input type="text" value="{{ $supplier->fax }}" name="fax" class="form-control">
                 </div>
             </div>
             
@@ -70,7 +70,7 @@
                     @lang('customers.phone')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" value="{{ $customer->phone }}" name="phone" class="form-control">
+                    <input type="text" value="{{ $supplier->phone }}" name="phone" class="form-control">
                 </div>
             </div>
 
@@ -79,7 +79,7 @@
                     @lang('customers.email')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" value="{{ $customer->email }}" name="email" class="form-control">
+                    <input type="text" value="{{ $supplier->email }}" name="email" class="form-control">
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
                     @lang('customers.facebook')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" value="{{ $customer->facebook }}" name="facebook" class="form-control">
+                    <input type="text" value="{{ $supplier->facebook }}" name="facebook" class="form-control">
                 </div>
             </div>
 
@@ -97,7 +97,7 @@
                     @lang('customers.note')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <textarea class="form-control" name="note">{{ $customer->note }}</textarea>
+                    <textarea class="form-control" name="note">{{ $supplier->note }}</textarea>
                 </div>
             </div>
 
@@ -106,7 +106,7 @@
                     @lang('customers.debit')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="number" value="{{ $customer->debit }}" name="debit" class="form-control">
+                    <input type="number" value="{{ $supplier->debit }}" name="debit" class="form-control">
                 </div>
             </div>
 
@@ -115,7 +115,7 @@
                     @lang('customers.credit')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="number" value="{{ $customer->credit }}" name="credit" class="form-control">
+                    <input type="number" value="{{ $supplier->credit }}" name="credit" class="form-control">
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
                     @lang('customers.balance')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="number" value="{{ $customer->balance }}" name="balance" class="form-control">
+                    <input type="number" value="{{ $supplier->balance }}" name="balance" class="form-control">
                 </div>
             </div>
 
@@ -133,7 +133,7 @@
                     @lang('customers.status')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="number" value="{{ $customer->status }}" name="status" class="form-control">
+                    <input type="number" value="{{ $supplier->status }}" name="status" class="form-control">
                 </div>
             </div>
             <div class="col-lg-12" style="margin-top: 20px !important;">

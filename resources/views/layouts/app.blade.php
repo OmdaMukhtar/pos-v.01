@@ -86,7 +86,7 @@
                 </li>
 
                 <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> شاشة بياتات مورد <span class="arrow"></span></a>
+                <a href="{{route('suppliers.index')}}"><i class="fa fa-gift fa-lg"></i> شاشة بياتات مورد <span class="arrow"></span></a>
                 </li>{{-- 
                 <ul class="sub-menu collapse" id="products">
                     <li class="active"><a href="#">CSS3 Animation</a></li>

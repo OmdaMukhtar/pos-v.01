@@ -7,7 +7,7 @@
         <h4 class="modal-title">@lang('general.delete_field')</h4>
     </div>
     <div class="modal-body">
-        <form action="{{ route('customers.destroy', ['customer' => $customer]) }}" method="post">
+        <form action="{{ route('suppliers.destroy', ['supplier' => $supplier]) }}" method="post">
         {{ csrf_field() }}
         {{ method_field('delete') }}
 
@@ -15,7 +15,7 @@
 
         <br>
 
-        {{ $customer->name }}
+        {{ $supplier->name }}
 
         <div class="form-group">
             <button class="btn btn-danger" type="submit">@lang('general.crud.delete')</button>

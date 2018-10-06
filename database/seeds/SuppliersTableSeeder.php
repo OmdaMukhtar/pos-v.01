@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CustomersTableSeeder extends Seeder
+class SuppliersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,12 +11,13 @@ class CustomersTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('customers')->delete();
-        \DB::table('customers')->insert(array(
+        
+        \DB::table('suppliers')->delete();
+        \DB::table('suppliers')->insert(array(
             0=>
             array(
                 'id' => 1,
-                'code' => 'CUS00000001',
+                'code' => 'SUP00000001',
                 'name' =>'{"ar":"علي آدم"}',
                 'address' =>'{"ar":"امدرمان"}',
                 'country' =>'{"ar":"السودان"}',
@@ -32,7 +33,7 @@ class CustomersTableSeeder extends Seeder
             1=>
             array(
                 'id' => 2,
-                'code' => 'CUS00000002',
+                'code' => 'SUP00000002',
                 'name' =>'{"ar":"كمال صالح"}',
                 'address' =>'{"ar":"امدرمان السوق الشعبي"}',
                 'country' =>'{"ar":"السودان"}',
@@ -46,5 +47,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_at' => '2018-07-13 02:23:10',
             ),
         ));
+
     }
 }

@@ -7,7 +7,7 @@
         <h4 class="modal-title">@lang('general.create_field')</h4>
     </div>
     <div class="modal-body">
-        <form action="{{ route('customers.store') }}" method="post">
+        <form action="{{ route('suppliers.store') }}" method="post">
             {{ csrf_field() }}
 
             <div class="col-lg-12" style="margin-top: 50px!important;" >

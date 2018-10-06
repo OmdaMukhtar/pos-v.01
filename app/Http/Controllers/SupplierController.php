@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Supplier;
 
 class SupplierController extends Controller
 {
@@ -13,7 +14,10 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        return "1235";
+
+        return view('suppliers.index')->with([
+            'suppliers' => Supplier::all()
+        ]);
     }
 
     /**
@@ -23,7 +27,18 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        $last = Supplier::orderBy('id','DESC')->first();
+        $value = ($last->id) + 1;
+
+        $code =  "SUP" . $formatted_value = sprintf("%08d", $value);
+
+        $found = Supplier::orderBy('created_at','desc')->where('code',$code)->get();
+        if($found->count() > 0)
+        {
+            return $this->create();
+        }    
+
+        return view('suppliers.create')->withCode($code);
     }
 
     /**
@@ -34,7 +49,25 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $supplier = new Supplier();
+        $supplier->name = $request->name;
+        $supplier->address = $request->address;
+        $supplier->code = $request->code;
+        $supplier->country = $request->country;
+        $supplier->city = $request->city;
+        $supplier->fax = $request->fax;
+        $supplier->facebook = $request->facebook;
+        $supplier->email = $request->email;
+        $supplier->phone = $request->phone;
+        $supplier->note = $request->note;
+        $supplier->debit = $request->debit;
+        $supplier->credit = $request->credit;
+        $supplier->balance = $request->balance;
+        // $supplier->status = $request->status;
+        $supplier->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -54,9 +87,11 @@ class SupplierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Supplier $supplier)
     {
-        //
+        return view('suppliers.edit')->with([
+            'supplier'=> $supplier
+        ]);
     }
 
     /**
@@ -66,9 +101,36 @@ class SupplierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Supplier $supplier)
     {
-        //
+                // $this->validate($request,[
+        //     'name'=>'require'
+        // ]);
+
+        $supplier->name = $request->name;
+        $supplier->address = $request->address;
+        $supplier->code = $request->code;
+        $supplier->country = $request->country;
+        $supplier->city = $request->city;
+        $supplier->fax = $request->fax;
+        $supplier->facebook = $request->facebook;
+        $supplier->email = $request->email;
+        $supplier->phone = $request->phone;
+        $supplier->note = $request->note;
+        $supplier->debit = $request->debit;
+        $supplier->credit = $request->credit;
+        $supplier->balance = $request->balance;
+        // $supplier->status = $request->status;
+        $supplier->save();
+
+        return redirect()->back();
+    }
+
+    public function confirm(Supplier $supplier)
+    {
+        return view('suppliers.confirm')->with([
+            'supplier' => $supplier
+        ]);
     }
 
     /**
@@ -77,8 +139,12 @@ class SupplierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Supplier $supplier)
     {
-        //
+        if($supplier->forceDelete()){
+            $supplier->delete();
+        }
+
+        return redirect()->back();
     }
 }

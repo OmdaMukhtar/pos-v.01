@@ -20,12 +20,7 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function confirm(Customer $customer)
-    {
-        return view('customers.confirm')->with([
-            'customer' => $customer
-        ]);
-    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -137,6 +132,13 @@ class CustomerController extends Controller
         return redirect()->back();
     }
 
+    public function confirm(Customer $customer)
+    {
+        return view('customers.confirm')->with([
+            'customer' => $customer
+        ]);
+    }
+    
     /**
      * Remove the specified resource from storage.
      *
