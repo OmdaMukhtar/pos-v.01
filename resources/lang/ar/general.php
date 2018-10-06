@@ -17,6 +17,9 @@ return [
         'deleted_successfully'          => 'تم الحذف بنجاح',
         'delete_children_first'         => 'يجب حذف السجلات المرتبطة أولاً',
     ],
+    'create_field' => 'إضافة حقل',
+    'delete_field' => 'حذف حقل',
+    'update_field' => 'تحديث حقل',
     'settings' => 'الضبط',
 
 ];

@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>منصة الباحثون</title>
+    <title>@lang('general.platform_name')</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('sb-admin/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -87,7 +87,7 @@
 
                 <li  data-toggle="collapse" data-target="#products" class="collapsed active">
                   <a href="#"><i class="fa fa-gift fa-lg"></i> شاشة بياتات مورد <span class="arrow"></span></a>
-                </li>
+                </li>{{-- 
                 <ul class="sub-menu collapse" id="products">
                     <li class="active"><a href="#">CSS3 Animation</a></li>
                     <li><a href="#">General</a></li>
@@ -100,7 +100,7 @@
                     <li><a href="#">Widgets</a></li>
                     <li><a href="#">Bootstrap Model</a></li>
                 </ul>
-
+                --}}
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
                   <a href="#"><i class="fa fa-globe fa-lg"></i> شاشة الاصناف <span class="arrow"></span></a>
@@ -111,7 +111,7 @@
                   <li>New Service 3</li>
                 </ul>
 
-
+                 {{-- 
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
                   <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
                 </li>
@@ -120,10 +120,10 @@
                   <li>New New 2</li>
                   <li>New New 3</li>
                 </ul>
-
+                --}}
 
                  <li>
-                  <a href="#">
+                  <a href="{{route('customers.index')}}">
                     <i class="fa fa-user fa-lg"></i> شاشة بيانات عميل
                   </a>
                   </li>

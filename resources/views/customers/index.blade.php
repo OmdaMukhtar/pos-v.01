@@ -5,8 +5,8 @@
         <thead>
         <tr>
             <th width="5%" class="text-center"><a class="btn btn-success" href="{{ route('customers.create') }}" data-toggle="modal" data-target="#myModal">@lang('general.crud.create')</a></th>
-            <th width="40%" class="text-center">@lang('customer.name')</th>
-            <th width="20%" class="text-center">@lang('customer.code')</th>
+            <th width="40%" class="text-center">@lang('customers.name')</th>
+            <th width="20%" class="text-center">@lang('customers.code')</th>
             <th width="30%" class="text-center">@lang('general.settings')</th>
         </tr>
         </thead>
