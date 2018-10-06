@@ -10,7 +10,7 @@
         <form action="{{ route('customers.store') }}" method="post">
             {{ csrf_field() }}
 
-            <div class="col-lg-12" style="margin-top: 20px!important;" >
+            <div class="col-lg-12" style="margin-top: 50px!important;" >
                 <div class="col-lg-3 col-md-3 snsolabel">
                     @lang('customers.code')
                 </div>
@@ -69,7 +69,7 @@
                     @lang('customers.phone')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="phone" class="form-control">
+                    <input type="number" name="phone" class="form-control">
                 </div>
             </div>
 
@@ -78,7 +78,7 @@
                     @lang('customers.email')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <input type="text" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control">
                 </div>
             </div>
 

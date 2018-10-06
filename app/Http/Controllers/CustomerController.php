@@ -39,7 +39,7 @@ class CustomerController extends Controller
 
         $code =  "CU" . $formatted_value = sprintf("%08d", $value);
 
-        $found = Customer::orderBy('created_at','desc')->where('customer_code',$code)->get();
+        $found = Customer::orderBy('created_at','desc')->where('code',$code)->get();
         if( count($found) > 0)
         {
             return $this->create();
@@ -63,7 +63,7 @@ class CustomerController extends Controller
         $customer = new Customer();
         $customer->name = $request->name;
         $customer->address = $request->address;
-        $customer->customer_code = $request->code;
+        $customer->code = $request->code;
         $customer->country = $request->country;
         $customer->city = $request->city;
         $customer->fax = $request->fax;
@@ -114,7 +114,27 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        // $this->validate($request,[
+        //     'name'=>'require'
+        // ]);
+
+        $customer->name = $request->name;
+        $customer->address = $request->address;
+        $customer->code = $request->code;
+        $customer->country = $request->country;
+        $customer->city = $request->city;
+        $customer->fax = $request->fax;
+        $customer->facebook = $request->facebook;
+        $customer->email = $request->email;
+        $customer->phone = $request->phone;
+        $customer->note = $request->note;
+        $customer->debit = $request->debit;
+        $customer->credit = $request->credit;
+        $customer->balance = $request->balance;
+        $customer->status = $request->status;
+        $customer->save();
+
+        return redirect()->back();
     }
 
     /**

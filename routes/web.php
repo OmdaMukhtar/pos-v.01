@@ -18,8 +18,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/dashboard','DashboarController');
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('logout','Auth\AuthController@logout');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('/dashboard','DashboardController');
+    
+    Route::resource('/customers','CustomerController');
+    Route::get('/customers/{customer}/confirm','CustomerController@confirm')->name('customers.confirm');
+    
+    Route::resource('/incomers','IncomersController');
+    Route::get('/incomers/{incomer}/confirm','IncomersController@confirm')->name('incomer.confirm');
+});
 
-Route::resource('/customers','CustomerController');
-Route::get('/customers/{customer}/confirm','CustomerController@confirm')->name('customers.confirm');

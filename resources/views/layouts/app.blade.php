@@ -71,7 +71,7 @@
         <!-- /.navbar-top-links -->
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
+@auth
 <div class="nav-side-menu">
     <div class="brand">تطبيق المبيعات</div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -172,8 +172,10 @@
             </ul>
      </div>
 </div>
+
         <!-- /.navbar-static-side -->
     </nav>
+@endauth
 
     <div id="page-wrapper">
 

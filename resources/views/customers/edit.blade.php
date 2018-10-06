@@ -22,6 +22,15 @@
 
             <div class="col-lg-12" style="margin-top: 20px!important;" >
                 <div class="col-lg-3 col-md-3 snsolabel">
+                    @lang('customers.code')
+                </div>
+                <div class="col-lg-9 col-md-9 snsoinput">
+                    <input type="text" name="code" readonly class="form-control" value="{{$customer->code}}">
+                </div>
+            </div>
+
+            <div class="col-lg-12" style="margin-top: 20px!important;" >
+                <div class="col-lg-3 col-md-3 snsolabel">
                     @lang('customers.address')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
@@ -88,7 +97,7 @@
                     @lang('customers.note')
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <textarea class="form-control" value="{{ $customer->note }}" name="note"></textarea>
+                    <textarea class="form-control" name="note">{{ $customer->note }}</textarea>
                 </div>
             </div>
 
@@ -132,7 +141,7 @@
 
                 </div>
                 <div class="col-lg-9 col-md-9 snsoinput">
-                    <button class="btn btn-success" type="submit">@lang('general.crud.create')</button>
+                    <button class="btn btn-warning" type="submit">@lang('general.crud.create')</button>
                 </div>
             </div>
         </form>

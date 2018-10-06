@@ -15,7 +15,7 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $customer->name }}</td>
-                <td>{{ $customer->customer_code }}</td>
+                <td>{{ $customer->code }}</td>
                 <td class="text-center">
                     <a class="btn btn-warning" href="{{ route('customers.edit', ['customer' => $customer]) }}" data-toggle="modal" data-target="#myModal">@lang('general.crud.edit')</a>
                     <a class="btn btn-danger" href="{{ route('customers.confirm', ['customer' => $customer]) }}" data-toggle="modal" data-target="#myModal">@lang('general.crud.delete')</a>

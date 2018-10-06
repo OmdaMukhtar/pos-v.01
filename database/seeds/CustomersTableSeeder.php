@@ -16,7 +16,7 @@ class CustomersTableSeeder extends Seeder
             0=>
             array(
                 'id' => 1,
-                'customer_code' => 'CUS00000001',
+                'code' => 'CUS00000001',
                 'name' =>'{"ar":"علي آدم"}',
                 'address' =>'{"ar","امدرمان"}',
                 'country' =>'{"ar","السودان"}',
@@ -30,7 +30,7 @@ class CustomersTableSeeder extends Seeder
             1=>
             array(
                 'id' => 2,
-                'customer_code' => 'CUS00000002',
+                'code' => 'CUS00000002',
                 'name' =>'{"ar":"كمال صالح"}',
                 'address' =>'{"ar","امدرمان السوق الشعبي"}',
                 'country' =>'{"ar","السودان"}',
