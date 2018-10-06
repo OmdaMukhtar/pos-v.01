@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('/customers','CustomerController');
     Route::get('/customers/{customer}/confirm','CustomerController@confirm')->name('customers.confirm');
     
-    Route::resource('/incomers','IncomersController');
-    Route::get('/incomers/{incomer}/confirm','IncomersController@confirm')->name('incomer.confirm');
+    Route::resource('/supplier','SupplierController');
+    Route::get('/suppliers/{supplier}/confirm','SupplierController@confirm')->name('supplier.confirm');
 });
 
